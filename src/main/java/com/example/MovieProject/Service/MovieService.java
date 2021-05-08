@@ -21,8 +21,8 @@ public class MovieService {
     public MovieModel createNewMovie(MovieModel movieModel){
         return movieModel;
     }
-
-    public MovieModel findById(int id){
-        return findById(id);
-    }
+//
+//    public MovieModel findById(int id){
+//        return findById(id);
+//    }
 }

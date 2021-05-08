@@ -28,8 +28,8 @@ public class MovieController {
         return ResponseEntity.ok(movieService.createNewMovie(movieModel));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<MovieModel> findById(int id){
-        return ResponseEntity.ok(movieService.findById(id));
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<MovieModel> findById(@PathVariable("id") int id){
+//        return ResponseEntity.ok(movieService.findById(id));
+//    }
 }
