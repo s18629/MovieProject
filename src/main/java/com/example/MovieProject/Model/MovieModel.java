@@ -8,18 +8,18 @@ import java.util.ArrayList;
 
 public class MovieModel {
 
-    private int id;
+    private Long id;
     private String genre;
     private String name;
 
 
-    public MovieModel(int id, String genre, String name) {
+    public MovieModel(Long id, String genre, String name) {
         this.id = id;
         this.genre = genre;
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 

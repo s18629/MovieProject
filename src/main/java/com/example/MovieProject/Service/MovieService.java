@@ -14,7 +14,7 @@ public class MovieService {
 
 
     public List<MovieModel> returnAllMovies(){
-        MovieModel movie_one = new MovieModel(1, "Horror", "saw");
+        MovieModel movie_one = new MovieModel(1L, "Horror", "saw");
         return List.of(movie_one);
     }
 
