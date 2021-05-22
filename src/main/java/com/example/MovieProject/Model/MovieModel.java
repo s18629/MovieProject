@@ -1,25 +1,21 @@
 package com.example.MovieProject.Model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import org.springframework.stereotype.Component;
+import javax.persistence.*;
 
-import java.util.ArrayList;
-
-
+@Entity(name = "movie")
 public class MovieModel {
 
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String genre;
     private String name;
 
 
-    public MovieModel(Long id, String genre, String name) {
-        this.id = id;
-        this.genre = genre;
-        this.name = name;
-    }
+   public MovieModel(){
+   }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -28,6 +24,6 @@ public class MovieModel {
     }
 
     public String getName() {
-        return name;
+       return name;
     }
 }

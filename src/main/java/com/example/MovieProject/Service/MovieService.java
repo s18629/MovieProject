@@ -1,28 +1,36 @@
 package com.example.MovieProject.Service;
 
 import com.example.MovieProject.Model.MovieModel;
+import com.example.MovieProject.Repository.MovieRepository;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class MovieService {
 
-    private ArrayList<MovieModel> movies;
+    private final MovieRepository movieRepository;
 
+    public MovieService(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
+    }
 
     public List<MovieModel> returnAllMovies(){
-        MovieModel movie_one = new MovieModel(1L, "Horror", "saw");
-        return List.of(movie_one);
+        return movieRepository.findAll();
+    }
+
+    public Optional<MovieModel> findById(Integer id){
+        return movieRepository.findById(id);
     }
 
     public MovieModel createNewMovie(MovieModel movieModel){
-        return movieModel;
+        return movieRepository.save(movieModel);
     }
-//
-//    public MovieModel findById(int id){
-//        return findById(id);
-//    }
+
+    public void removeById(Integer id){
+        movieRepository.deleteById(id);
+    }
 }
