@@ -2,7 +2,6 @@ package com.example.MovieProject.Service;
 
 import com.example.MovieProject.Model.MovieModel;
 import com.example.MovieProject.Repository.MovieRepository;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
 
@@ -32,5 +31,9 @@ public class MovieService {
 
     public void removeById(Integer id){
         movieRepository.deleteById(id);
+    }
+
+    public void updateMovie(Integer id){
+        movieRepository.updateAvailability(id);
     }
 }

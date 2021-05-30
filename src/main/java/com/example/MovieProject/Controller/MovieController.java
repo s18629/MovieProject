@@ -39,4 +39,9 @@ public class MovieController {
         movieService.removeById(id);
     }
 
+    @PostMapping("/update/{id}")
+    public void updateAvailability(@PathVariable Integer id){
+        movieService.updateMovie(id);
+    }
+
 }
