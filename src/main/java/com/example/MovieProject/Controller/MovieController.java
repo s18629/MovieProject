@@ -3,7 +3,6 @@ package com.example.MovieProject.Controller;
 import com.example.MovieProject.Model.MovieModel;
 import com.example.MovieProject.Service.MovieService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class MovieController {
     }
 
     @GetMapping("/movie/{id}")
-    public ResponseEntity<Optional<MovieModel>> returnMovieById(@PathVariable Integer id){
+    public ResponseEntity<MovieModel> returnMovieById(@PathVariable Integer id){
         return ResponseEntity.ok(movieService.findById(id));
     }
 

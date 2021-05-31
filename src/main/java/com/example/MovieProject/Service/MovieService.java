@@ -2,11 +2,11 @@ package com.example.MovieProject.Service;
 
 import com.example.MovieProject.Model.MovieModel;
 import com.example.MovieProject.Repository.MovieRepository;
+import com.example.MovieProject.exception.MovieNotFoundException;
 import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MovieService {
@@ -21,8 +21,8 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-    public Optional<MovieModel> findById(Integer id){
-        return movieRepository.findById(id);
+    public MovieModel findById(Integer id){
+        return movieRepository.findById(id).orElseThrow(MovieNotFoundException::new);
     }
 
     public MovieModel createNewMovie(MovieModel movieModel){

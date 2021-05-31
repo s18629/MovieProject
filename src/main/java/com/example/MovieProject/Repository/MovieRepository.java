@@ -22,7 +22,7 @@ public interface MovieRepository extends JpaRepository<MovieModel, Integer>{
     void deleteById(Integer integer);
 
     @Override
-    <S extends MovieModel> S save(S s);
+    MovieModel save (MovieModel movie);
 
     @Transactional
     @Modifying
